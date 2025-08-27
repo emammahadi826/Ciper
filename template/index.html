@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <base href="./">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="content-wrap">
+            <div id="menu-container"></div>
+            <div id="main-content">
+                <div id="views-container">
+                    <div id="task-list-container">
+                        <div id="task-list" class="chat-container">
+                            <!-- Task bubbles will be appended here -->
+                        </div>
+                    </div>
+                    <div id="completed-task-list-container" style="display: none;">
+                         <div id="completed-task-list" class="chat-container">
+                            <!-- Completed tasks will be appended here -->
+                        </div>
+                    </div>
+                    <div id="profile-view-container" style="display: none;">
+                        <div class="p-6">
+                            <h1 class="text-xl font-bold">Profile</h1>
+                            <p class="mt-4">This is the profile page. User settings and information will be displayed here.</p>
+                        </div>
+                    </div>
+                    <div id="settings-view-container" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="input-area">
+            <input type="text" id="task-input" placeholder="Type a task...">
+            <button id="schedule-button"><i class="fas fa-calendar-alt"></i></button>
+            <button id="add-button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div id="schedule-modal" class="modal">
+        <div class="modal-content">
+            <div id="calendar"></div>
+            <div id="time-selector">
+                <input type="time" id="time-input">
+            </div>
+            <button id="confirm-schedule">Confirm</button>
+            <button id="cancel-schedule">Cancel</button>
+        </div>
+    </div>
+
+    <div id="notification-prompt" class="modal">
+        <div class="modal-content">
+            <p id="notification-prompt-text"></p>
+            <button id="notification-yes">Yes</button>
+            <button id="notification-no">No</button>
+            <button id="notification-snooze">Snooze (5m)</button>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
